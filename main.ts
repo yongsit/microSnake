@@ -37,13 +37,13 @@ function genFruit () {
 function growSnake () {
     if (snake[0] == fruit[0] && snake[1] == fruit[1]) {
         game.setScore(game.score() + 1)
-        snake.push(snake[snake.length] - 2)
-        snake.push(snake[snake.length] - 2)
+        snake.push(snake[snake.length - 2])
+        snake.push(snake[snake.length - 2])
         genFruit()
     }
 }
 function moveSnake () {
-    angle = 40
+    angle = 30
     minusAngle = angle * -1
     if (input.rotation(Rotation.Roll) > angle || input.rotation(Rotation.Roll) < minusAngle || (input.rotation(Rotation.Pitch) > angle || input.rotation(Rotation.Pitch) < minusAngle)) {
         x = snake[0]
