@@ -6,7 +6,7 @@ function isCollision () {
     y = snake[1]
     collided = 0
     for (let index = 0; index <= snake.length / 2 - 1; index++) {
-        if (index == 0) {
+        if (index == 0 || snake.length <= 2) {
             continue;
         } else {
             if (x == snake[index * 2] && y == snake[index * 2 + 1]) {
@@ -43,7 +43,7 @@ function growSnake () {
     }
 }
 function moveSnake () {
-    angle = 30
+    angle = 25
     minusAngle = angle * -1
     if (input.rotation(Rotation.Roll) > angle || input.rotation(Rotation.Roll) < minusAngle || (input.rotation(Rotation.Pitch) > angle || input.rotation(Rotation.Pitch) < minusAngle)) {
         x = snake[0]
